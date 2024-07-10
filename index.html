@@ -9,11 +9,11 @@
 	<title>Задать промпт</title>    
 </head>
 <body>
-  <p>Действуя в качестве [Роль], выполняй&nbsp;[Действие] в [Формат результата]</p>
-  <p>Роль:&nbsp;<select name="role"><option selected="selected" value=""></option><option value="Разработчик веб-сайта">Разработчик веб-сайта</option><option value="Продавец">Продавец</option><option value="Терапевт">Терапевт</option><option value="Юрист">Юрист</option><option value="Аналитик">Аналитик</option><option value="Писатель">Писатель</option><option value="Менеджер проекта">Менеджер проекта</option><option value="Инвестор">Инвестор</option><option value="Инженер">Инженер</option><option value="Промпт-инженер">Промпт-инженер</option><option value="Тренер">Тренер</option><option value="Копирайтер">Копирайтер</option></select></p>
-  <p>Действие:&nbsp;<select name="task"></select></p>
-  <p>Формат результата:&nbsp;<select name="format"></select></p>
-  <p><input name="Задать промпт" type="button" value="Задать промпт" /></p>
+	<p>Действуя в качестве [Роль], сделай [Действие], покажи результат в [Формат результата]</p>
+	<p>Роль:&nbsp;<select name="role" required="required"><option selected="selected" value=""></option><option value="Аналитика">Аналитик</option><option value="Юриста">Юрист</option><option value="Менеджера проекта">Менеджер проекта</option><option value="Продавца">Продавец</option><option value="Терапевта">Терапевт</option><option value="Писателя">Писатель</option><option value="Разработчика веб-сайта">Разработчик веб-сайта</option><option value="Инвестора">Инвестор</option><option value="Инженера">Инженер</option><option value="Промпт-инженера">Промпт-инженер</option><option value="Тренера">Тренер</option><option value="Копирайтера">Копирайтер</option></select></p>
+	<p>Действие:&nbsp;<select name="task" required="required"><option value="заголовок">Заголовок</option><option value="эссе">Эссе</option><option value="анализ">Анализ</option><option value="аналитический обзор">Аналитический обзор</option><option value="рекламный текст">Рекламный текст</option><option value="описание товара">Описание товара</option><option value="сопроводительное письмо">Сопроводительное письмо</option><option value="сценарий">Сценарий</option><option value="алгоритм">Алгоритм</option><option value="ключевые слова для SEO">Ключевые слова для SEO</option></select></p>
+	<p>Формат результата:&nbsp;<select name="format" required="required"><option value="текста">Текст</option><option value="списка">Список</option><option value="таблицы">Таблица</option><option value="HTML">HTML</option><option value="код">Код</option></select></p>
+	<p><input name="Задать промпт" type="button" value="Задать промпт" /></p>
 </body>
 </html>
   
