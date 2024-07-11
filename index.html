@@ -9,11 +9,41 @@
 	<title>Задать промпт</title>    
 </head>
 <body>
-	<p>Действуя в качестве [Роль], сделай [Действие], покажи результат в [Формат результата]</p>
-	<p>Роль:&nbsp;<select name="role" required="required"><option selected="selected" value=""></option><option value="Аналитика">Аналитик</option><option value="Юриста">Юрист</option><option value="Менеджера проекта">Менеджер проекта</option><option value="Продавца">Продавец</option><option value="Терапевта">Терапевт</option><option value="Писателя">Писатель</option><option value="Разработчика веб-сайта">Разработчик веб-сайта</option><option value="Инвестора">Инвестор</option><option value="Инженера">Инженер</option><option value="Промпт-инженера">Промпт-инженер</option><option value="Тренера">Тренер</option><option value="Копирайтера">Копирайтер</option></select></p>
-	<p>Действие:&nbsp;<select name="task" required="required"><option value="заголовок">Заголовок</option><option value="эссе">Эссе</option><option value="анализ">Анализ</option><option value="аналитический обзор">Аналитический обзор</option><option value="рекламный текст">Рекламный текст</option><option value="описание товара">Описание товара</option><option value="сопроводительное письмо">Сопроводительное письмо</option><option value="сценарий">Сценарий</option><option value="алгоритм">Алгоритм</option><option value="ключевые слова для SEO">Ключевые слова для SEO</option></select></p>
-	<p>Формат результата:&nbsp;<select name="format" required="required"><option value="текста">Текст</option><option value="списка">Список</option><option value="таблицы">Таблица</option><option value="HTML">HTML</option><option value="код">Код</option></select></p>
-	<p><input name="Задать промпт" type="button" value="Задать промпт" /></p>
+	<div class="wrapper">
+  		<div class="tabs">
+    			<div class="tab">
+      				<input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+      				<label for="tab-1" class="tab-label">Ручной ввод</label>
+      				<div class="tab-content">
+					<p>Введите свой промпт:</p>
+					<p><textarea name="prompt" rows="3"></textarea></p>
+					<p><input name="Задать промпт" type="button" value="Задать промпт" /></p>
+				</div>
+    			</div>
+    			<div class="tab">
+      				<input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+      				<label for="tab-2" class="tab-label">Конструктор</label>
+      				<div class="tab-content">
+					<p>Действуя в качестве [Роль], сделай [Действие], покажи результат в [Формат результата]</p>
+					<p>Роль:&nbsp;<select name="role" required="required"><option selected="selected" value=""></option><option value="Аналитика">Аналитик</option><option value="Юриста">Юрист</option><option value="Менеджера проекта">Менеджер проекта</option><option value="Продавца">Продавец</option><option value="Терапевта">Терапевт</option><option value="Писателя">Писатель</option><option value="Разработчика веб-сайта">Разработчик веб-сайта</option><option value="Инвестора">Инвестор</option><option value="Инженера">Инженер</option><option value="Промпт-инженера">Промпт-инженер</option><option value="Тренера">Тренер</option><option value="Копирайтера">Копирайтер</option></select></p>
+					<p>Действие:&nbsp;<select name="task" required="required"><option value="заголовок">Заголовок</option><option value="эссе">Эссе</option><option value="анализ">Анализ</option><option value="аналитический обзор">Аналитический обзор</option><option value="рекламный текст">Рекламный текст</option><option value="описание товара">Описание товара</option><option value="сопроводительное письмо">Сопроводительное письмо</option><option value="сценарий">Сценарий</option><option value="алгоритм">Алгоритм</option><option value="ключевые слова для SEO">Ключевые слова для SEO</option></select></p>
+					<p>Формат результата:&nbsp;<select name="format" required="required"><option value="текста">Текст</option><option value="списка">Список</option><option value="таблицы">Таблица</option><option value="HTML">HTML</option><option value="код">Код</option></select></p>
+					<p><input name="Задать промпт" type="button" value="Задать промпт" /></p
+				</div>
+    			</div>
+    			<div class="tab">
+      				<input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+      				<label for="tab-3" class="tab-label">Типовые промпты</label>
+      				<div class="tab-content">
+					<p>Выбери шаблон:</p>
+					<p><select name="prompt_3"><option value="1">Упрости сложную информацию</option><option value="2">Тренируйся, чтобы научиться писать правильно</option><option value="3">Применяй свои знания</option><option value="4">Сравнивай и противопоставляй</option><option value="5">Обобщи сложный текст</option></select></p>
+					<p><input name="Задать промпт" type="button" value="Задать промпт" /></p>
+				</div>
+    			</div>
+  		</div>
+  		<p>------------------</p>
+	</div>
+
 </body>
 </html>
   
