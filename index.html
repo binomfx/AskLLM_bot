@@ -129,7 +129,7 @@ input:checked + label {
 	lnewPrompt = ""
 	
 	function setPrompt_1() {
-		newPrompt = document.getItem('prompt')
+		newPrompt = document.getElementById('prompt1')
 		console.log('setPrompt_1 = ', newPrompt);
 	}
 
@@ -157,7 +157,7 @@ input:checked + label {
       			<h2>Введите свой промпт:</h2>
 	  		<p></p>
 			<p>
-				<textarea name="prompt" rows="3"></textarea>
+				<textarea id="prompt1" name="prompt" rows="3"></textarea>
 			</p>
   			<p>
 				<button onclick="setPrompt_1();">Задать промпт</button>
