@@ -126,7 +126,16 @@ input:checked + label {
 <!------------------------------------Вкладки (tabs)---------------------------------------->
 
 <script>
-	function setPrompt() {
+	let newPrompt = ""
+	
+	function setPrompt_1(value) {
+		newPrompt = value
+	}
+
+	function setPrompt_2() {
+	}
+
+	function setPrompt_3() {
 	}
 </script>
 	
@@ -148,6 +157,9 @@ input:checked + label {
 	  		<p></p>
 			<p>
 				<textarea name="prompt" rows="3"></textarea>
+			</p>
+  			<p>
+				  	<button onclick="setPrompt_1(prompt);">Задать промпт</button>
 			</p>
   </section>
     
@@ -196,6 +208,9 @@ input:checked + label {
 					<option value="код">Код</option>
 				</select>
 			</p>
+  			<p>
+				  	<button onclick="setPrompt_2();">Задать промпт</button>
+			</p>
   </section>
     
   <section id="content3">
@@ -210,11 +225,10 @@ input:checked + label {
 					<option value="5">Обобщи сложный текст</option>
 				</select>
 			</p>
+  			<p>
+				  	<button onclick="setPrompt_3();">Задать промпт</button>
+			</p>
   </section>
-  <section>
-  </section>
-	<p alilgn="center">================================</p>
-  	<button onclick="setPrompt();">Задать промпт</button>
 </main>
 	
 </body>
