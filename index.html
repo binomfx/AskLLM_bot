@@ -137,7 +137,7 @@ input:checked + label {
 		s_role = document.getElementById('role').value
 		s_task = document.getElementById('task').value
 		s_format = document.getElementById('format').value
-		newPrompt = "" + s_role + "" + s_task + "" + s_format
+		newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + ", покажи результат в форме " + s_format
 		console.log('setPrompt_2 = ', newPrompt);
 	}
 
@@ -172,7 +172,7 @@ input:checked + label {
   </section>
     
   <section id="content2">
-      			<h2>Действуя в качестве [Роль], сделай [Действие], покажи результат в [Формат результата]</h2>
+      			<h2>Действуя в качестве [Роль], сделай [Действие], покажи результат в форме [Формат результата]</h2>
 			<p></p>
 	  		<p>
 				Роль:&nbsp;
