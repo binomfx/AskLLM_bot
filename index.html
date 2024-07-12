@@ -128,9 +128,9 @@ input:checked + label {
 <script>
 	let newPrompt = ""
 	
-	function setPrompt_1(value) {
-		newPrompt = value
-		console.log('setPrompt_1 = ', value);
+	function setPrompt_1() {
+		newPrompt = document.getElementById('prompt')
+		console.log('setPrompt_1 = ', newPrompt);
 	}
 
 	function setPrompt_2() {
@@ -160,7 +160,7 @@ input:checked + label {
 				<textarea name="prompt" rows="3"></textarea>
 			</p>
   			<p>
-				<button onclick="setPrompt_1(document.getElementById('prompt'));">Задать промпт</button>
+				<button onclick="setPrompt_1();">Задать промпт</button>
 			</p>
   </section>
     
