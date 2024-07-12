@@ -126,11 +126,13 @@ input:checked + label {
 <!------------------------------------Вкладки (tabs)---------------------------------------->
 
 <script>
-	lnewPrompt = ""
+	const tg = window.Telegram.WebApp;
+	newPrompt = ""
 	
 	function setPrompt_1() {
 		newPrompt = document.getElementById('prompt1').value
 		console.log('setPrompt_1 = ', newPrompt);
+		setNewPrompt()
 	}
 
 	function setPrompt_2() {
@@ -139,6 +141,7 @@ input:checked + label {
 		s_format = document.getElementById('format').value
 		newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format
 		console.log('setPrompt_2 = ', newPrompt);
+		setNewPrompt()
 	}
 
 	function setPrompt_3() {
@@ -152,6 +155,25 @@ input:checked + label {
 		i_template = document.getElementById('template').value
 		newPrompt = templates[i_template]
 		console.log('setPrompt_3 = ', newPrompt);
+		setNewPrompt()
+	}
+
+	<!-- let url = 'ССЫЛКА_НА_YANDEX_FUNCTION'; -->
+	<!-- Данные для отправки в телеграм - новый промпт -->
+	var data = JSON.stringify(newPrompt);  
+		
+	function setNewPrompt() {
+		console.log("start");            
+		var xhr = new XMLHttpRequest();            
+		xhr.open("POST", url, true);            
+		xhr.setRequestHeader("Content-Type", "application/json");            
+		xhr.setRequestHeader("X-Custom-Info", "getOpenInvoiceUrl");            
+		xhr.onreadystatechange = function () {                
+			if (xhr.readyState === 4 && xhr.status === 200) { 
+				tg.openInvoice(xhr.responseText);             
+			}            
+		};            
+		xhr.send(data);
 	}
 </script>
 	
