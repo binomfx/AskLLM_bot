@@ -134,9 +134,16 @@ input:checked + label {
 	}
 
 	function setPrompt_2() {
+		s_role = document.getElementById('role').value
+		s_task = document.getElementById('task').value
+		s_format = document.getElementById('format').value
+		newPrompt = "" + s_role + "" + s_task + "" + s_format
+		console.log('setPrompt_2 = ', newPrompt);
 	}
 
 	function setPrompt_3() {
+		i_template = document.getElementById('template').value
+		newPrompt = String(i_template)
 	}
 </script>
 	
@@ -169,7 +176,7 @@ input:checked + label {
 			<p></p>
 	  		<p>
 				Роль:&nbsp;
-				<select name="role" required="required">
+				<select id="role" name="role" required="required">
 					<option value="Аналитика">Аналитик</option>
 					<option value="Юриста">Юрист</option>
 					<option value="Менеджера проекта">Менеджер проекта</option>
@@ -186,7 +193,7 @@ input:checked + label {
 			</p>
 			<p>
 				Действие:&nbsp;
-				<select name="task" required="required">
+				<select id="task" name="task" required="required">
 					<option value="заголовок">Заголовок</option>
 					<option value="эссе">Эссе</option>
 					<option value="анализ">Анализ</option>
@@ -201,7 +208,7 @@ input:checked + label {
 			</p>
 			<p>
 				Формат результата:&nbsp;
-				<select name="format" required="required">
+				<select id="format" name="format" required="required">
 					<option value="текста">Текст</option>
 					<option value="списка">Список</option>
 					<option value="таблицы">Таблица</option>
@@ -218,7 +225,7 @@ input:checked + label {
       			<h2>Выберите шаблон:</h2>
 			<p></p>
 	  		<p>
-				<select name="prompt_3">
+				<select id="template" name="prompt_3">
 					<option value="1">Упрости сложную информацию</option>
 					<option value="2">Тренируйся, чтобы научиться писать правильно</option>
 					<option value="3">Применяй свои знания</option>
