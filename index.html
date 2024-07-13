@@ -170,6 +170,49 @@ input:checked + label {
 	function setNewPrompt() {
 		tg.sendData(data);
 	}
+
+	function Button_1() {	
+		tg.MainButton.setText("Оплатить");      
+		tg.MainButton.onClick(() => {     
+			newPrompt = document.getElementById('prompt1').value
+			console.log('setPrompt_1 = ', newPrompt);
+			setNewPrompt()
+		});
+	}
+
+	function Button_2() {	
+		tg.MainButton.setText("Оплатить");      
+		tg.MainButton.onClick(() => {
+			s_role = document.getElementById('role').value
+			s_task = document.getElementById('task').value
+			s_format = document.getElementById('format').value
+			newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format
+			console.log('setPrompt_2 = ', newPrompt);
+			setNewPrompt()
+		});
+	}
+
+	function Button_3() {	
+		tg.MainButton.setText("Оплатить");      
+		tg.MainButton.onClick(() => {     
+			templates = {
+				1:"Разбейте {input} на более мелкие, понятные части. Используйте аналогии и примеры из реальной жизни, чтобы упростить концепцию и сделать ее более понятной.",
+				2:"Проанализируйте приведенный ниже текст на предмет стиля, тембра и интонации. Создайте запрос на написание нового абзаца в том же стиле, тембре и тоне: {input}",
+				3:"Используйте свои знания по {input} для решения реальной проблемы. Объясните ход своих мыслей и поделитесь своим решением.",
+				4:"Сравните и противопоставьте {input}, чтобы лучше понять их сходства и различия. Используйте примеры, чтобы проиллюстрировать свою точку зрения.",
+				5:"Мне нужно прочитать сложную статью, связанную с {input}. Не могли бы вы помочь мне обобщить ключевые моменты и выводы из текста?",
+			}
+			i_template = document.getElementById('template').value
+			newPrompt = templates[i_template]
+			console.log('setPrompt_3 = ', newPrompt);
+			setNewPrompt()
+		});
+	}
+
+	
+
+	
+	
 </script>
 
 <!------------------------------------Вкладки (tabs)---------------------------------------->
@@ -194,7 +237,8 @@ input:checked + label {
 				<textarea id="prompt1" name="prompt" rows="3" cols="35"></textarea>
 			</p>
   			<p>
-				<button onclick="setPrompt_1();">Задать промпт</button>
+				Button_1();
+<!--				<button onclick="setPrompt_1();">Задать промпт</button>		-->
 			</p>
   </section>
     
@@ -244,7 +288,8 @@ input:checked + label {
 				</select>
 			</p>
   			<p>
-				<button onclick="setPrompt_2();">Задать промпт</button>
+				Button_2()
+<!--				<button onclick="setPrompt_2();">Задать промпт</button>		-->
 			</p>
   </section>
     
@@ -261,7 +306,8 @@ input:checked + label {
 				</select>
 			</p>
   			<p>
-				<button onclick="setPrompt_3();">Задать промпт</button>
+				Button_3()
+<!--				<button onclick="setPrompt_3();">Задать промпт</button>		-->
 			</p>
   </section>
 </main>
