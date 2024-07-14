@@ -132,6 +132,7 @@ input:checked + label {
 
 <script>
 	const tg = window.Telegram.WebApp;
+	tg.ready();
 	newPrompt = ""
 	
 	function setPrompt_1() {
@@ -169,6 +170,7 @@ input:checked + label {
 		
 	function setNewPrompt() {
 		tg.sendData(data);
+		tg.close();
 	}
 
 	function Button_1() {	
