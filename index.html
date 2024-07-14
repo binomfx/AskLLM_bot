@@ -163,13 +163,10 @@ input:checked + label {
 		console.log('setPrompt_3 = ', newPrompt);
 		setNewPrompt()
 	}
-
-	<!-- let url = 'ССЫЛКА_НА_YANDEX_FUNCTION'; -->
-	<!-- Данные для отправки в телеграм - новый промпт -->
-	var data = JSON.stringify(newPrompt);  
-		
+	
 	function setNewPrompt() {
-		tg.sendData(data);
+		<!-- Данные для отправки в телеграм - новый промпт -->
+		tg.sendData(JSON.stringify(newPrompt));
 		tg.close();
 	}
 
