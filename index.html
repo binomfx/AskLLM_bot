@@ -157,7 +157,9 @@ input:checked + label {
   			return _hash === hash;
 		};
 
-		
+		if (!verifyTelegramWebAppData) {
+			tg.close();
+		}
 		
 		tg.ready();
 		tg.isExpanded;
