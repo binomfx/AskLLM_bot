@@ -210,7 +210,7 @@ input:checked + label {
 		function setNewPrompt() {
 			// Данные для отправки в телеграм - новый промпт
 
-			window.Telegram.WebApp.showAlert(newPrompt, callback);			
+			tg.showAlert(newPrompt, callback);			
 
 			tg.sendData(JSON.stringify(newPrompt));
 			tg.close();
