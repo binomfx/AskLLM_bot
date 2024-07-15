@@ -304,7 +304,12 @@ input:checked + label {
 				</select>
 			</p>
   			<p>
-					<button onclick="setPrompt_2();">Задать промпт</button>
+				<!--button onclick="setPrompt_2();">Задать промпт</button-->
+				<script>
+					tg.MainButton.onClick(() => {     
+						setPrompt_2()
+					});
+				</script>
 			</p>
   </section>
     
@@ -321,7 +326,12 @@ input:checked + label {
 				</select>
 			</p>
   			<p>
-				<button onclick="setPrompt_3();">Задать промпт</button>
+				<!--button onclick="setPrompt_3();">Задать промпт</button-->
+				<script>
+					tg.MainButton.onClick(() => {     
+						setPrompt_3()
+					});
+				</script>
 			</p>
   </section>
 </main>
