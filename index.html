@@ -135,6 +135,8 @@ input:checked + label {
 	tg.ready();
 	tg.isExpanded;
 	tg.expand();
+	tg.MainButton.setText("Задать промпт");      
+	tg.MainButton.show()
 	newPrompt = ""
 	
 	function setPrompt_1() {
@@ -240,13 +242,9 @@ input:checked + label {
   			<p>
 				<!--button onclick="setPrompt_1();">Задать промпт</button-->
 				<script>
-					tg.MainButton.setText("Задать промпт");      
 					tg.MainButton.onClick(() => {     
-						newPrompt = document.getElementById('prompt1').value
-						console.log('setPrompt_1 = ', newPrompt);
-						setNewPrompt()
+						setPrompt_1()
 					});
-					tg.MainButton.show()
 				</script>
 			</p>
   </section>
