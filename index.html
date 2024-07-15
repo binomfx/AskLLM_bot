@@ -171,6 +171,7 @@ input:checked + label {
 	function setNewPrompt() {
 		<!-- Данные для отправки в телеграм - новый промпт -->
 		tg.sendData(JSON.stringify(newPrompt));
+<!--
 		tg.showPopup(
   			{
     				title: "Set New Prompt", // Optional
@@ -179,6 +180,7 @@ input:checked + label {
   			},
   			callback
 		);
+-->
 		tg.sendData(JSON.stringify(newPrompt));
 		tg.close();
 	}
