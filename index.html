@@ -160,6 +160,15 @@ input:checked + label {
 		if (!verifyTelegramWebAppData) {
 			tg.close();
 		}
+
+		const {
+		  bg_color,
+		  text_color,
+		  hint_color,
+		  button_color,
+		  button_text_color,
+		  secondary_bg_color,
+		} = tg.themeParams
 		
 		tg.ready();
 		tg.isExpanded;
