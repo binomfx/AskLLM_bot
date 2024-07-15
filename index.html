@@ -133,6 +133,8 @@ input:checked + label {
 <script>
 	const tg = window.Telegram.WebApp;
 	tg.ready();
+	tg.isExpanded;
+	tg.expand();
 	newPrompt = ""
 	
 	function setPrompt_1() {
@@ -171,7 +173,7 @@ input:checked + label {
 	}
 
 	function Button_1() {	
-		tg.MainButton.setText("Оплатить");      
+		tg.MainButton.setText("Задать промпт");      
 		tg.MainButton.onClick(() => {     
 			newPrompt = document.getElementById('prompt1').value
 			console.log('setPrompt_1 = ', newPrompt);
@@ -180,7 +182,7 @@ input:checked + label {
 	}
 
 	function Button_2() {	
-		tg.MainButton.setText("Оплатить");      
+		tg.MainButton.setText("Задать промпт");      
 		tg.MainButton.onClick(() => {
 			s_role = document.getElementById('role').value
 			s_task = document.getElementById('task').value
@@ -192,7 +194,7 @@ input:checked + label {
 	}
 
 	function Button_3() {	
-		tg.MainButton.setText("Оплатить");      
+		tg.MainButton.setText("Задать промпт");      
 		tg.MainButton.onClick(() => {     
 			templates = {
 				1:"Разбейте {input} на более мелкие, понятные части. Используйте аналогии и примеры из реальной жизни, чтобы упростить концепцию и сделать ее более понятной.",
@@ -236,7 +238,15 @@ input:checked + label {
 				<textarea id="prompt1" name="prompt" rows="3" cols="35"></textarea>
 			</p>
   			<p>
-				<button onclick="setPrompt_1();">Задать промпт</button>
+				<!--button onclick="setPrompt_1();">Задать промпт</button-->
+				<script>
+					tg.MainButton.setText("Задать промпт");      
+					tg.MainButton.onClick(() => {     
+						newPrompt = document.getElementById('prompt1').value
+						console.log('setPrompt_1 = ', newPrompt);
+						setNewPrompt()
+					});
+				</script>
 			</p>
   </section>
     
