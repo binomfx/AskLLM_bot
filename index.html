@@ -3,12 +3,6 @@
 
 <head>
 	<script src="https://telegram.org/js/telegram-web-app.js">  
-		const tg = Telegram.WebApp;
-		tg.ready();
-		tg.isExpanded;
-		tg.expand();
-		tg.MainButton.setText("Задать промпт");      
-		tg.MainButton.show()
 	</script>
 	<meta charset="UTF-8">    
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">    
@@ -131,12 +125,18 @@ input:checked + label {
 <body>
 
 	<script>
+		const tg = Telegram.WebApp;
+		tg.ready();
+		tg.isExpanded;
+		tg.expand();
+		tg.MainButton.setText("Задать промпт");      
+		tg.MainButton.show()
 
 		newPrompt = ""
 	
 		function setPrompt_1() {
 			newPrompt = document.getElementById('prompt1').value
-			console.log('setPrompt_1 = ', newPrompt);
+			//console.log('setPrompt_1 = ', newPrompt);
 			setNewPrompt()
 		}
 
@@ -145,7 +145,7 @@ input:checked + label {
 			s_task = document.getElementById('task').value
 			s_format = document.getElementById('format').value
 			newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format
-			console.log('setPrompt_2 = ', newPrompt);
+			//console.log('setPrompt_2 = ', newPrompt);
 			setNewPrompt()
 		}
 
@@ -159,7 +159,7 @@ input:checked + label {
 			}
 			i_template = document.getElementById('template').value
 			newPrompt = templates[i_template]
-			console.log('setPrompt_3 = ', newPrompt);
+			//console.log('setPrompt_3 = ', newPrompt);
 			setNewPrompt()
 		}
 	
