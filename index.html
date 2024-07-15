@@ -25,7 +25,7 @@ html, body {
 body {
   font: 14px/1 'Open Sans', sans-serif;
   color: #555;
-  background: #eee;
+  background: var(--tg-theme-bg-color);
 }
 
 h1 {
@@ -45,7 +45,7 @@ main {
   max-width: 600px;
   padding: 1em;
   margin: 0 auto;
-  background: #fff;
+  background: var(--tg-theme-secondary-bg-color);
 }
 	
 section {
@@ -209,7 +209,7 @@ input:checked + label {
 
 			//window.Telegram.WebApp.showAlert(newPrompt);			
 
-			tg.sendData(JSON.stringify(newPrompt));
+			tg.sendData(newPrompt);
 			tg.close();
 		}
 </script>
