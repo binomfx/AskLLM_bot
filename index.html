@@ -209,17 +209,9 @@ input:checked + label {
 	
 		function setNewPrompt() {
 			// Данные для отправки в телеграм - новый промпт
-			tg.sendData(JSON.stringify(newPrompt));
-/*
-			tg.showPopup(
-  				{
-    					title: "Set New Prompt", // Optional
-   					 message: newPrompt,
-    					buttons: [{ type: "destructive", text: "OK" }], // Optional
-  				},
-	  			callback
-			);
-*/
+
+			window.Telegram.WebApp.showAlert(newPrompt, callback);			
+
 			tg.sendData(JSON.stringify(newPrompt));
 			tg.close();
 		}
