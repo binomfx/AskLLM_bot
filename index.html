@@ -219,8 +219,9 @@
 	
 		function setNewPrompt() {
 			// Данные для отправки в телеграм - новый промпт
+			tg.showAlert("SetNewPrompt = ", newPrompt);			
 			tg.sendData(newPrompt);
-			tg.close();
+			//tg.close();
 		}
 </script>
 
@@ -245,14 +246,11 @@
 			<p>
 				<textarea id="prompt1" name="prompt" rows="3" cols="35"></textarea>
 			</p>
-  			<p>
-				<!--button onclick="setPrompt_1();">Задать промпт</button-->
-				<script>
-					tg.MainButton.onClick(() => {     
-						setPrompt_1()
-					});
-				</script>
-			</p>
+			<script>
+				tg.MainButton.onClick(() => {     
+					setPrompt_1()
+				});
+			</script>
   </section>
     
   <section id="content2">
@@ -300,14 +298,11 @@
 					<option value="код">Код</option>
 				</select>
 			</p>
-  			<p>
-				<!--button onclick="setPrompt_2();">Задать промпт</button-->
-				<script>
-					tg.MainButton.onClick(() => {     
-						setPrompt_2()
-					});
-				</script>
-			</p>
+			<script>
+				tg.MainButton.onClick(() => {     
+					setPrompt_2()
+				});
+			</script>
   </section>
     
   <section id="content3">
@@ -322,14 +317,11 @@
 					<option value="5">Обобщи сложный текст</option>
 				</select>
 			</p>
-  			<p>
-				<!--button onclick="setPrompt_3();">Задать промпт</button-->
-				<script>
-					tg.MainButton.onClick(() => {     
-						setPrompt_3()
-					});
-				</script>
-			</p>
+			<script>
+				tg.MainButton.onClick(() => {     
+					setPrompt_3()
+				});
+			</script>
   </section>
 </main>
 	
