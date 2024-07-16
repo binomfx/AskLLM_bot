@@ -174,15 +174,7 @@
 			tg.close();
 		}
 */
-		const {
-		  bg_color,
-		  text_color,
-		  hint_color,
-		  button_color,
-		  button_text_color,
-		  secondary_bg_color,
-		} = tg.themeParams
-		
+
 		tg.ready();
 		tg.isExpanded;
 		tg.expand();
@@ -194,7 +186,7 @@
 		function setPrompt_1() {
 			newPrompt = document.getElementById('prompt1').value
 
-			window.Telegram.WebApp.showAlert("1 = ", newPrompt);			
+			#window.Telegram.WebApp.showAlert("1 = ", newPrompt);			
 
 			setNewPrompt()
 		}
@@ -205,7 +197,7 @@
 			s_format = document.getElementById('format').value
 			newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format
 
-			window.Telegram.WebApp.showAlert("2 = ", newPrompt);			
+			#window.Telegram.WebApp.showAlert("2 = ", newPrompt);			
 
 			setNewPrompt()
 		}
@@ -221,7 +213,7 @@
 			i_template = document.getElementById('template').value
 			newPrompt = templates[i_template]
 
-			window.Telegram.WebApp.showAlert("3 = ", newPrompt);			
+			#window.Telegram.WebApp.showAlert("3 = ", newPrompt);			
 
 			setNewPrompt()
 		}
