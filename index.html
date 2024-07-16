@@ -183,8 +183,7 @@
 		tg.isExpanded;
 		tg.expand();
 		tg.MainButton.setText("Задать промпт");      
-		tg.MainButton.show()
-
+		
 		newPrompt = ""
 	
 		function setPrompt_1() {
@@ -224,7 +223,7 @@
 	
 		function setNewPrompt() {
 			// Данные для отправки в телеграм - новый промпт
-			tg.showAlert("SetNewPrompt = ", newPrompt);			
+			//tg.showAlert("SetNewPrompt = ", newPrompt);			
 			tg.sendData(newPrompt);
 			//tg.close();
 		}
@@ -257,6 +256,7 @@
 				tg.MainButton.onClick(() => {     
 					setPrompt_1()
 				});
+				tg.MainButton.show()
 			</script>
   </section>
     
@@ -309,6 +309,7 @@
 				tg.MainButton.onClick(() => {     
 					setPrompt_2()
 				});
+				tg.MainButton.show()
 			</script>
   </section>
     
@@ -328,6 +329,7 @@
 				tg.MainButton.onClick(() => {     
 					setPrompt_3()
 				});
+				tg.MainButton.show()
 			</script>
   </section>
 
@@ -335,9 +337,13 @@
       			<h2>Спаравка</h2>
 	  		<p></p>
 			<p>
-				Справка о функциях мини-приложения.
+				Справка о функциях мини-приложения.&nbsp;
 				Индивидуальные настройки пользователя.
 			</p>
+	  		<script>
+				tg.MainButton.hide()
+			</script>
+
   </section>
 
 </main>
