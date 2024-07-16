@@ -183,16 +183,16 @@
 		tg.isExpanded;
 		tg.expand();
 		tg.MainButton.setText("Задать промпт");
+		tg.MainButton.onClick(() => {     
+			setNewPrompt();
+		});
 		tg.MainButton.show();
 		
 		newPrompt = "";
+		tab = 0;
 	
 		function setPrompt_1() {
 			newPrompt = document.getElementById('prompt1').value;
-
-			//window.Telegram.WebApp.showAlert("1 = ", newPrompt);			
-
-			setNewPrompt();
 		}
 
 		function setPrompt_2() {
@@ -200,10 +200,6 @@
 			s_task = document.getElementById('task').value;
 			s_format = document.getElementById('format').value;
 			newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format;
-
-			//window.Telegram.WebApp.showAlert("2 = ", newPrompt);			
-
-			setNewPrompt();
 		}
 
 		function setPrompt_3() {
@@ -216,17 +212,27 @@
 			}
 			i_template = document.getElementById('template').value;
 			newPrompt = templates[i_template];
-
-			//window.Telegram.WebApp.showAlert("3 = ", newPrompt);			
-
-			setNewPrompt();
 		}
 	
 		function setNewPrompt() {
-			// Данные для отправки в телеграм - новый промпт
-			//tg.showAlert("SetNewPrompt = ", newPrompt);			
-			tg.sendData(newPrompt);
-			//tg.close();
+			switch(tab) {
+				case 1:
+					setPrompt_1();
+					break;
+				case 2:
+					setPrompt_2();
+					break;
+				case 3:
+					setPrompt_3();
+					break;
+				default:
+					tab=0;
+			}
+			if (tab>0) {
+				tg.sendData(newPrompt);
+			} else {
+				tg.close();
+			}
 		}
 </script>
 
@@ -253,12 +259,7 @@
 			<p>
 				<textarea id="prompt1" name="prompt" rows="3" cols="35"></textarea>
 			</p>
-			<script>
-				tg.MainButton.onClick(() => {     
-					setPrompt_3();
-				});
-				//tg.MainButton.show();
-			</script>
+			<script>tab = 1;</script>
   </section>
     
   <section id="content2">
@@ -306,13 +307,7 @@
 					<option value="код">Код</option>
 				</select>
 			</p>
-			<script>
-				tg.MainButton.onClick(() => {     
-					setPrompt_2();
-				});
-				//tg.MainButton.show();
-			</script>
-  </section>
+			<script>tab = 2;</script>
     
   <section id="content3">
       			<h2>Выберите шаблон:</h2>
@@ -326,12 +321,7 @@
 					<option value="5">Обобщи сложный текст</option>
 				</select>
 			</p>
-			<script>
-				tg.MainButton.onClick(() => {     
-					setPrompt_3();
-				});
-				//tg.MainButton.show();
-			</script>
+			<script>tab = 3;</script>
   </section>
 
   <section id="content4">
@@ -339,10 +329,7 @@
 	  		<p></p>
 			<p>Справка о функциях мини-приложения.&nbsp;</p>
 			<p>Индивидуальные настройки пользователя.</p>
-	  		<script>
-				//tg.MainButton.hide();
-			</script>
-
+			<script>tab = 4;</script>
   </section>
 
 </main>
