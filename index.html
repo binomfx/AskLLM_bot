@@ -182,27 +182,28 @@
 		tg.ready();
 		tg.isExpanded;
 		tg.expand();
-		tg.MainButton.setText("Задать промпт");      
+		tg.MainButton.setText("Задать промпт");
+		tg.MainButton.show();
 		
-		newPrompt = ""
+		newPrompt = "";
 	
 		function setPrompt_1() {
-			newPrompt = document.getElementById('prompt1').value
+			newPrompt = document.getElementById('prompt1').value;
 
 			//window.Telegram.WebApp.showAlert("1 = ", newPrompt);			
 
-			setNewPrompt()
+			setNewPrompt();
 		}
 
 		function setPrompt_2() {
-			s_role = document.getElementById('role').value
-			s_task = document.getElementById('task').value
-			s_format = document.getElementById('format').value
-			newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format
+			s_role = document.getElementById('role').value;
+			s_task = document.getElementById('task').value;
+			s_format = document.getElementById('format').value;
+			newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format;
 
 			//window.Telegram.WebApp.showAlert("2 = ", newPrompt);			
 
-			setNewPrompt()
+			setNewPrompt();
 		}
 
 		function setPrompt_3() {
@@ -213,12 +214,12 @@
 				4:"Сравните и противопоставьте {input}, чтобы лучше понять их сходства и различия. Используйте примеры, чтобы проиллюстрировать свою точку зрения.",
 				5:"Мне нужно прочитать сложную статью, связанную с {input}. Не могли бы вы помочь мне обобщить ключевые моменты и выводы из текста?",
 			}
-			i_template = document.getElementById('template').value
-			newPrompt = templates[i_template]
+			i_template = document.getElementById('template').value;
+			newPrompt = templates[i_template];
 
 			//window.Telegram.WebApp.showAlert("3 = ", newPrompt);			
 
-			setNewPrompt()
+			setNewPrompt();
 		}
 	
 		function setNewPrompt() {
@@ -254,9 +255,9 @@
 			</p>
 			<script>
 				tg.MainButton.onClick(() => {     
-					setPrompt_1()
+					setPrompt_1();
 				});
-				tg.MainButton.show()
+				tg.MainButton.show();
 			</script>
   </section>
     
@@ -307,9 +308,9 @@
 			</p>
 			<script>
 				tg.MainButton.onClick(() => {     
-					setPrompt_2()
+					setPrompt_2();
 				});
-				tg.MainButton.show()
+				tg.MainButton.show();
 			</script>
   </section>
     
@@ -327,9 +328,9 @@
 			</p>
 			<script>
 				tg.MainButton.onClick(() => {     
-					setPrompt_3()
+					setPrompt_3();
 				});
-				tg.MainButton.show()
+				tg.MainButton.show();
 			</script>
   </section>
 
@@ -341,7 +342,7 @@
 				Индивидуальные настройки пользователя.
 			</p>
 	  		<script>
-				tg.MainButton.hide()
+				tg.MainButton.hide();
 			</script>
 
   </section>
