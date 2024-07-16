@@ -193,6 +193,9 @@
 	
 		function setPrompt_1() {
 			newPrompt = document.getElementById('prompt1').value
+
+			window.Telegram.WebApp.showAlert("1 = ", newPrompt);			
+
 			setNewPrompt()
 		}
 
@@ -201,6 +204,9 @@
 			s_task = document.getElementById('task').value
 			s_format = document.getElementById('format').value
 			newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format
+
+			window.Telegram.WebApp.showAlert("2 = ", newPrompt);			
+
 			setNewPrompt()
 		}
 
@@ -214,14 +220,14 @@
 			}
 			i_template = document.getElementById('template').value
 			newPrompt = templates[i_template]
+
+			window.Telegram.WebApp.showAlert("3 = ", newPrompt);			
+
 			setNewPrompt()
 		}
 	
 		function setNewPrompt() {
 			// Данные для отправки в телеграм - новый промпт
-
-			window.Telegram.WebApp.showAlert(newPrompt);			
-
 			tg.sendData(newPrompt);
 			tg.close();
 		}
