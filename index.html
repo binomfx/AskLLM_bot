@@ -189,7 +189,7 @@
 		tg.MainButton.show();
 		
 		newPrompt = "";
-		tab = 0;
+		prompt_tab = 0;
 	
 		function setPrompt_1() {
 			newPrompt = document.getElementById('prompt1').value;
@@ -215,7 +215,7 @@
 		}
 	
 		function setNewPrompt() {
-			switch(tab) {
+			switch(prompt_tab) {
 				case 1:
 					setPrompt_1();
 					break;
@@ -226,9 +226,9 @@
 					setPrompt_3();
 					break;
 				default:
-					tab=0;
+					prompt_tab = 0;
 			}
-			if (tab>0) {
+			if (prompt_tab > 0) {
 				tg.sendData(newPrompt);
 			} else {
 				tg.close();
@@ -259,7 +259,7 @@
 			<p>
 				<textarea id="prompt1" name="prompt" rows="3" cols="35"></textarea>
 			</p>
-			<script>tab = 1;</script>
+			<script>prompt_tab = 1;</script>
   </section>
     
   <section id="content2">
@@ -307,7 +307,8 @@
 					<option value="код">Код</option>
 				</select>
 			</p>
-			<script>tab = 2;</script>
+			<script>prompt_tab = 2;</script>
+  </section>
     
   <section id="content3">
       			<h2>Выберите шаблон:</h2>
@@ -321,7 +322,7 @@
 					<option value="5">Обобщи сложный текст</option>
 				</select>
 			</p>
-			<script>tab = 3;</script>
+			<script>prompt_tab = 3;</script>
   </section>
 
   <section id="content4">
@@ -329,7 +330,7 @@
 	  		<p></p>
 			<p>Справка о функциях мини-приложения.&nbsp;</p>
 			<p>Индивидуальные настройки пользователя.</p>
-			<script>tab = 4;</script>
+			<script>prompt_tab = 4;</script>
   </section>
 
 </main>
