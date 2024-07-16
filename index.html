@@ -97,6 +97,10 @@
 	  content: '\f0ca';
 	}
 
+	label[for*='4']:before {
+	  content: '\f05a';
+	}
+
 	label:hover {
 	  color: #888;
 	  cursor: pointer;
@@ -239,6 +243,8 @@
   <input id="tab3" type="radio" name="tabs">
   <label for="tab3">Шаблон</label>
 
+  <input id="tab4" type="radio" name="tabs">
+  <label for="tab4">Справка</label>
     
   <section id="content1">
       			<h2>Введите свой промпт:</h2>
@@ -323,6 +329,16 @@
 				});
 			</script>
   </section>
+
+  <section id="content4">
+      			<h2>Спаравка</h2>
+	  		<p></p>
+			<p>
+				Справка о функциях мини-приложения.
+				Индивидуальные настройки пользователя.
+			</p>
+  </section>
+
 </main>
 	
 </body>
