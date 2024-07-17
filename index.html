@@ -188,11 +188,11 @@
 		});
 		tg.MainButton.show();
 		
-		newPrompt = "";
-	
 		function setNewPrompt() {
+			newPrompt = "";
+
 			//console.log('tab1 = '+ document.getElementById('tab1').value);
-			//tg.showAlert(document.getElementById('tab1').value);
+			tg.showAlert(document.getElementById('tab1').value + " - " + document.getElementById('tab2').value + " - " + document.getElementById('tab3').value);
 			if (document.getElementById('tab1').value == 'on') { // Ручной ввод
 				prompt_tab = 1;
 				newPrompt = document.getElementById('prompt1').value;
