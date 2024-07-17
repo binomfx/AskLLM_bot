@@ -192,17 +192,17 @@
 	
 		function setNewPrompt() {
 			//console.log('tab1 = '+ document.getElementById('tab1').value);
-			tg.showAlert(document.getElementById('tab1').value);
-			if (document.getElementById('tab1').value == 'checked') { // Ручной ввод
+			//tg.showAlert(document.getElementById('tab1').value);
+			if (document.getElementById('tab1').value == 'on') { // Ручной ввод
 				prompt_tab = 1;
 				newPrompt = document.getElementById('prompt1').value;
-			} else if (document.getElementById('tab2').value == 'checked') { // Конструктор
+			} else if (document.getElementById('tab2').value == 'on') { // Конструктор
 				prompt_tab = 2;
 				s_role = document.getElementById('role').value;
 				s_task = document.getElementById('task').value;
 				s_format = document.getElementById('format').value;
 				newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format;
-			} else if (document.getElementById('tab3').value == 'checked') { // Шаблон
+			} else if (document.getElementById('tab3').value == 'on') { // Шаблон
 				prompt_tab = 3;
 				templates = {
 					1:"Разбейте {input} на более мелкие, понятные части. Используйте аналогии и примеры из реальной жизни, чтобы упростить концепцию и сделать ее более понятной.",
