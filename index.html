@@ -189,50 +189,34 @@
 		tg.MainButton.show();
 		
 		newPrompt = "";
-		prompt_tab = 0;
-	
-		function setPrompt_1() {
-			newPrompt = document.getElementById('prompt1').value;
-		}
-
-		function setPrompt_2() {
-			s_role = document.getElementById('role').value;
-			s_task = document.getElementById('task').value;
-			s_format = document.getElementById('format').value;
-			newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format;
-		}
-
-		function setPrompt_3() {
-			templates = {
-				1:"Разбейте {input} на более мелкие, понятные части. Используйте аналогии и примеры из реальной жизни, чтобы упростить концепцию и сделать ее более понятной.",
-				2:"Проанализируйте приведенный ниже текст на предмет стиля, тембра и интонации. Создайте запрос на написание нового абзаца в том же стиле, тембре и тоне: {input}",
-				3:"Используйте свои знания по {input} для решения реальной проблемы. Объясните ход своих мыслей и поделитесь своим решением.",
-				4:"Сравните и противопоставьте {input}, чтобы лучше понять их сходства и различия. Используйте примеры, чтобы проиллюстрировать свою точку зрения.",
-				5:"Мне нужно прочитать сложную статью, связанную с {input}. Не могли бы вы помочь мне обобщить ключевые моменты и выводы из текста?",
-			}
-			i_template = document.getElementById('template').value;
-			newPrompt = templates[i_template];
-		}
 	
 		function setNewPrompt() {
-			switch(prompt_tab) {
-				case 1:
-					setPrompt_1();
-					break;
-				case 2:
-					setPrompt_2();
-					break;
-				case 3:
-					setPrompt_3();
-					break;
-				default:
-					prompt_tab = 0;
-			}
-			if (prompt_tab > 0) {
-				tg.sendData(newPrompt);
+			if (document.getElementById('tab1').value == 'checked') { // Ручной ввод
+				prompt_tab = 1;
+				newPrompt = document.getElementById('prompt1').value;
+			} else if (document.getElementById('tab2').value == 'checked') { // Конструктор
+				prompt_tab = 2;
+				s_role = document.getElementById('role').value;
+				s_task = document.getElementById('task').value;
+				s_format = document.getElementById('format').value;
+				newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format;
+			} else if (document.getElementById('tab3').value == 'checked') { // Шаблон
+				prompt_tab = 3;
+				templates = {
+					1:"Разбейте {input} на более мелкие, понятные части. Используйте аналогии и примеры из реальной жизни, чтобы упростить концепцию и сделать ее более понятной.",
+					2:"Проанализируйте приведенный ниже текст на предмет стиля, тембра и интонации. Создайте запрос на написание нового абзаца в том же стиле, тембре и тоне: {input}",
+					3:"Используйте свои знания по {input} для решения реальной проблемы. Объясните ход своих мыслей и поделитесь своим решением.",
+					4:"Сравните и противопоставьте {input}, чтобы лучше понять их сходства и различия. Используйте примеры, чтобы проиллюстрировать свою точку зрения.",
+					5:"Мне нужно прочитать сложную статью, связанную с {input}. Не могли бы вы помочь мне обобщить ключевые моменты и выводы из текста?",
+				}
+				i_template = document.getElementById('template').value;
+				newPrompt = templates[i_template];
 			} else {
+				prompt_tab = 0;
 				tg.close();
 			}
+
+			tg.sendData(newPrompt);
 		}
 </script>
 
