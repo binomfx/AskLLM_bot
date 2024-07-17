@@ -182,7 +182,7 @@
 		tg.ready();
 		tg.isExpanded;
 		tg.expand();
-		tg.MainButton.setText("Задать промпт");
+		tg.MainButton.setText("Готово");
 		tg.MainButton.onClick(() => {     
 			setNewPrompt();
 		});
@@ -191,7 +191,7 @@
 		newPrompt = "";
 	
 		function setNewPrompt() {
-			console.log('tab1 = '+ document.getElementById('tab1').value);
+			//console.log('tab1 = '+ document.getElementById('tab1').value);
 			if (document.getElementById('tab1').value == 'checked') { // Ручной ввод
 				prompt_tab = 1;
 				newPrompt = document.getElementById('prompt1').value;
