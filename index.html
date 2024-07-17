@@ -192,18 +192,15 @@
 			newPrompt = "";
 
 			//console.log('tab1 = '+ document.getElementById('tab1').value);
-			tg.showAlert(document.getElementById('tab1').value + " - " + document.getElementById('tab2').value + " - " + document.getElementById('tab3').value);
-			if (document.getElementById('tab1').value == 'on') { // Ручной ввод
-				prompt_tab = 1;
+			tg.showAlert(document.getElementById('tab1').checked + " - " + document.getElementById('tab2').checked + " - " + document.getElementById('tab3').checked);
+			if (document.getElementById('tab1').checked) { // Ручной ввод
 				newPrompt = document.getElementById('prompt1').value;
-			} else if (document.getElementById('tab2').value == 'on') { // Конструктор
-				prompt_tab = 2;
+			} else if (document.getElementById('tab2').checked) { // Конструктор
 				s_role = document.getElementById('role').value;
 				s_task = document.getElementById('task').value;
 				s_format = document.getElementById('format').value;
 				newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format;
-			} else if (document.getElementById('tab3').value == 'on') { // Шаблон
-				prompt_tab = 3;
+			} else if (document.getElementById('tab3').checked) { // Шаблон
 				templates = {
 					1:"Разбейте {input} на более мелкие, понятные части. Используйте аналогии и примеры из реальной жизни, чтобы упростить концепцию и сделать ее более понятной.",
 					2:"Проанализируйте приведенный ниже текст на предмет стиля, тембра и интонации. Создайте запрос на написание нового абзаца в том же стиле, тембре и тоне: {input}",
@@ -214,7 +211,6 @@
 				i_template = document.getElementById('template').value;
 				newPrompt = templates[i_template];
 			} else {
-				prompt_tab = 0;
 				tg.close();
 			}
 
@@ -245,7 +241,6 @@
 			<p>
 				<textarea id="prompt1" name="prompt" rows="3" cols="35"></textarea>
 			</p>
-			<script>prompt_tab = 1;</script>
   </section>
     
   <section id="content2">
@@ -293,7 +288,6 @@
 					<option value="код">Код</option>
 				</select>
 			</p>
-			<script>prompt_tab = 2;</script>
   </section>
     
   <section id="content3">
@@ -308,7 +302,6 @@
 					<option value="5">Обобщи сложный текст</option>
 				</select>
 			</p>
-			<script>prompt_tab = 3;</script>
   </section>
 
   <section id="content4">
@@ -316,7 +309,6 @@
 	  		<p></p>
 			<p>Справка о функциях мини-приложения.&nbsp;</p>
 			<p>Индивидуальные настройки пользователя.</p>
-			<script>prompt_tab = 4;</script>
   </section>
 
 </main>
