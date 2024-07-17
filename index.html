@@ -192,6 +192,7 @@
 	
 		function setNewPrompt() {
 			//console.log('tab1 = '+ document.getElementById('tab1').value);
+			tg.showAlert(document.getElementById('tab1').value);
 			if (document.getElementById('tab1').value == 'checked') { // Ручной ввод
 				prompt_tab = 1;
 				newPrompt = document.getElementById('prompt1').value;
