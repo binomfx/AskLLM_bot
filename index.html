@@ -144,22 +144,30 @@
 	<script>
 		// Загрузить файлы JSON
 		fetch('help.json')
-  				.then(response => response.json())
-  				.then(jsonData => {
-					//console.log('help = ');
-					//console.log(jsonData);
-					let d_help = jsonData; //JSON.parse(jsonData);
-					//console.log('help[1] = ' + d_help[1]);
-					document.getElementById('hlp1').innerHTML = d_help[1];
-					document.getElementById('hlp2').innerHTML = d_help[2];
-					document.getElementById('hlp3').innerHTML = d_help[3];
-					document.getElementById('hlp4').innerHTML = d_help[4];
-					document.getElementById('hlp5').innerHTML = d_help[5];
-					document.getElementById('hlp6').innerHTML = d_help[6];
-				}); //console.log(jsonData));
+ 			.then(response => response.json())
+  			.then(jsonData => {
+				let d_help = jsonData; //JSON.parse(jsonData);
+				document.getElementById('hlp1').innerHTML = d_help[1];
+				document.getElementById('hlp2').innerHTML = d_help[2];
+				document.getElementById('hlp3').innerHTML = d_help[3];
+				document.getElementById('hlp4').innerHTML = d_help[4];
+				document.getElementById('hlp5').innerHTML = d_help[5];
+				document.getElementById('hlp6').innerHTML = d_help[6];
+			}); 
+
+		d_constructor = {};
+		fetch('constructor.json')
+  			.then(response => response.json())
+  			.then(jsonData => {
+				d_constructor = jsonData; //JSON.parse(jsonData);
+			}); 
 		
-		//JSON.parse(jsonData);
-		//console.log('help.json = '+ document.getElementById('tab1').value);
+		d_templates = {};
+		fetch('templates.json')
+  			.then(response => response.json())
+  			.then(jsonData => {
+				d_templates = jsonData; //JSON.parse(jsonData);
+			}); 
 
 		
 		const tg = window.Telegram.WebApp;
@@ -219,8 +227,10 @@
 				s_role = document.getElementById('role').value;
 				s_task = document.getElementById('task').value;
 				s_format = document.getElementById('format').value;
-				newPrompt = "Действуя в качестве " + s_role + ", сделай " + s_task + " по {input}, покажи результат в форме " + s_format;
+				s_style = document.getElementById('style').value;
+				newPrompt = d_constructor[1] + s_role + d_constructor[2] + s_task + d_constructor[3] + s_format + d_constructor[4] + s_style + d_constructor[5];
 			} else if (document.getElementById('tab3').checked) { // Шаблон
+				/*
 				templates = {
 					1:"Разбейте {input} на более мелкие, понятные части. Используйте аналогии и примеры из реальной жизни, чтобы упростить концепцию и сделать ее более понятной.",
 					2:"Проанализируйте приведенный ниже текст на предмет стиля, тембра и интонации. Создайте запрос на написание нового абзаца в том же стиле, тембре и тоне: {input}",
@@ -228,8 +238,9 @@
 					4:"Сравните и противопоставьте {input}, чтобы лучше понять их сходства и различия. Используйте примеры, чтобы проиллюстрировать свою точку зрения.",
 					5:"Мне нужно прочитать сложную статью, связанную с {input}. Не могли бы вы помочь мне обобщить ключевые моменты и выводы из текста?",
 				}
+    				*/
 				i_template = document.getElementById('template').value;
-				newPrompt = templates[i_template];
+				newPrompt = d_templates[i_template];
 			} else {
 				tg.close();
 			}
@@ -306,6 +317,15 @@
 					<option value="таблицы">Таблица</option>
 					<option value="HTML">HTML</option>
 					<option value="код">Код</option>
+				</select>
+			</p>
+			<p>
+				Стиль:&nbsp;
+				<select id="style" name="style" required="required">
+					<option value="деловой">Деловой</option>
+					<option value="поплярный">Популярный</option>
+					<option value="научный">Научный</option>
+					<option value="художественный">Художественный</option>
 				</select>
 			</p>
   </section>
