@@ -146,7 +146,7 @@
 		json_help = fetch('help.json')
   			.then(response => response.json())
   			//.then(jsonData => console.log(jsonData));
-		d_help = JSON.parse(jsonData);
+		d_help = JSON.parse(json_help);
 
 		console.log('help = ' + json_help);
 		console.log('help[1] = ' + d_help[1]);
