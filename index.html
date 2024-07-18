@@ -145,7 +145,7 @@
 		// Загрузить файлы JSON
 		json_help = fetch('help.json')
   			.then(response => response.json())
-  			.then(jsonData => console.log(jsonData));
+  			//.then(jsonData => console.log(jsonData));
 		d_help = JSON.parse(jsonData);
 
 		console.log('help = ' + json_help);
