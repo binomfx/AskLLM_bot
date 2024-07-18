@@ -143,10 +143,14 @@
 
 	<script>
 		// Загрузить файлы JSON
-		fetch('help.json')
+		json_help = fetch('help.json')
   			.then(response => response.json())
   			.then(jsonData => console.log(jsonData));
 		d_help = JSON.parse(jsonData);
+
+		console.log('help = ' + json_help);
+		console.log('help[1] = ' + d_help[1]);
+
 		document.getElementById('hlp1').innerHTML = d_help[1];
 		document.getElementById('hlp2').innerHTML = d_help[2];
 		document.getElementById('hlp3').innerHTML = d_help[3];
