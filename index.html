@@ -142,6 +142,14 @@
 <body>
 
 	<script>
+		fetch('help.json')
+  			.then(response => response.json())
+  			.then(jsonData => console.log(jsonData));
+		
+		
+		//console.log('help.json = '+ document.getElementById('tab1').value);
+
+		
 		const tg = window.Telegram.WebApp;
 
 		telegramInitData = tg.initData;
