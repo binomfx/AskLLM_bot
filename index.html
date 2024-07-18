@@ -220,14 +220,14 @@
 			newPrompt = "";
 
 			//console.log('tab1 = '+ document.getElementById('tab1').value);
-			//tg.showAlert(document.getElementById('tab1').checked + " - " + document.getElementById('tab2').checked + " - " + document.getElementById('tab3').checked);
+			tg.showAlert(document.getElementById('tab1').checked + " - " + document.getElementById('tab2').checked + " - " + document.getElementById('tab3').checked);
 			if (document.getElementById('tab1').checked) { // Ручной ввод
 				newPrompt = document.getElementById('prompt1').value;
 			} else if (document.getElementById('tab2').checked) { // Конструктор
 				s_role = document.getElementById('role').value;
 				s_task = document.getElementById('task').value;
 				s_format = document.getElementById('format').value;
-				s_style = document.getElementById('style').value;
+				s_style = document.getElementById('style1').value;
 				newPrompt = d_constructor[1] + s_role + d_constructor[2] + s_task + d_constructor[3] + s_format + d_constructor[4] + s_style + d_constructor[5];
 			} else if (document.getElementById('tab3').checked) { // Шаблон
 				/*
@@ -321,7 +321,7 @@
 			</p>
 			<p>
 				Стиль:&nbsp;
-				<select id="style" name="style" required="required">
+				<select id="style1" name="style1" required="required">
 					<option value="деловой">Деловой</option>
 					<option value="поплярный">Популярный</option>
 					<option value="научный">Научный</option>
