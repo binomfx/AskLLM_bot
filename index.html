@@ -218,33 +218,21 @@
 		
 		function setNewPrompt() {
 			newPrompt = "";
-
-			//console.log('tab1 = '+ document.getElementById('tab1').value);
-			//tg.showAlert(document.getElementById('tab1').checked + " - " + document.getElementById('tab2').checked + " - " + document.getElementById('tab3').checked);
 			if (document.getElementById('tab1').checked) { // Ручной ввод
 				newPrompt = document.getElementById('prompt1').value;
 			} else if (document.getElementById('tab2').checked) { // Конструктор
 				s_role = document.getElementById('role').value;
 				s_task = document.getElementById('task').value;
+				s_task2 = document.getElementById('task2').value;
 				s_format = document.getElementById('format').value;
 				s_style = document.getElementById('style1').value;
-				newPrompt = d_constructor[1] + s_role + d_constructor[2] + s_task + d_constructor[3] + s_format + d_constructor[4] + s_style + d_constructor[5];
+				newPrompt = d_constructor[1] + s_role + d_constructor[2] + s_task + " " + s_task2 + d_constructor[3] + s_format + d_constructor[4] + s_style + d_constructor[5];
 			} else if (document.getElementById('tab3').checked) { // Шаблон
-				/*
-				templates = {
-					1:"Разбейте {input} на более мелкие, понятные части. Используйте аналогии и примеры из реальной жизни, чтобы упростить концепцию и сделать ее более понятной.",
-					2:"Проанализируйте приведенный ниже текст на предмет стиля, тембра и интонации. Создайте запрос на написание нового абзаца в том же стиле, тембре и тоне: {input}",
-					3:"Используйте свои знания по {input} для решения реальной проблемы. Объясните ход своих мыслей и поделитесь своим решением.",
-					4:"Сравните и противопоставьте {input}, чтобы лучше понять их сходства и различия. Используйте примеры, чтобы проиллюстрировать свою точку зрения.",
-					5:"Мне нужно прочитать сложную статью, связанную с {input}. Не могли бы вы помочь мне обобщить ключевые моменты и выводы из текста?",
-				}
-    				*/
 				i_template = document.getElementById('template').value;
 				newPrompt = d_templates[i_template];
 			} else {
 				tg.close();
 			}
-
 			tg.sendData(newPrompt);
 		}
 </script>
@@ -308,6 +296,8 @@
 					<option value="алгоритм">Алгоритм</option>
 					<option value="ключевые слова для SEO">Ключевые слова для SEO</option>
 				</select>
+				Уточнение:&nbsp;
+				<textarea id="task2" name="task2" rows="1" cols="15"></textarea>
 			</p>
 			<p>
 				Формат результата:&nbsp;
@@ -340,6 +330,8 @@
 					<option value="3">Применяй свои знания</option>
 					<option value="4">Сравнивай и противопоставляй</option>
 					<option value="5">Обобщи сложный текст</option>
+					<option value="6">Открытый вопрос</option>
+					<option value="7">Беседа</option>
 				</select>
 			</p>
   </section>
