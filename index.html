@@ -34,6 +34,10 @@
 	  color: var(--tg-theme-text-color);
 	}
 
+	h2 {
+	  color: var(--tg-theme-link-color);
+	}
+
 	p { 
 	  margin: 0 0 20px; 
 	  line-height: 1.5; 
@@ -52,7 +56,7 @@
 	  display: none;
 	  padding: 20px 0 0;
 	  border-top: 1px solid #ddd;
-	  color: var(--tg-theme-hint-color);
+	  color: var(--tg-theme-text-color);
 	}
 
 	input {
@@ -172,7 +176,7 @@
 		
 		const tg = window.Telegram.WebApp;
 
-		telegramInitData = tg.initData;
+		//telegramInitData = tg.initData;
 		//tg.showAlert(decodeURIComponent(telegramInitData));
 /*
 		const verifyTelegramWebAppData = (telegramInitData: string) => {
