@@ -173,7 +173,7 @@
 		const tg = window.Telegram.WebApp;
 
 		telegramInitData = tg.initData;
-		tg.showAlert(telegramInitData);
+		tg.showAlert(decodeURIComponent(telegramInitData));
 /*
 		const verifyTelegramWebAppData = (telegramInitData: string) => {
 			  // The data is a query string, which is composed of a series of field-value pairs.
