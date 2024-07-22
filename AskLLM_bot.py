@@ -7,8 +7,8 @@ from os import path
 #amvera_var = os.environ["MY_VAR"]
 #if amvera_var == 1:
   # Импортировать ключ для авторизации в GigaChat и токен от Telegram бота
-  sber = os.environ('SBER_AUTH')
-  bot_token = os.environ('ASKLLM_BOT_TOKEN')
+sber = os.environ('SBER_AUTH') 
+bot_token = os.environ('ASKLLM_BOT_TOKEN')
 #else:
   # Импортировать ключ для авторизации в GigaChat и токен от Telegram бота
 #  from google.colab import userdata
