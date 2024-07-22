@@ -2,7 +2,6 @@
 import asyncio, json, os, requests
 import os.path
 from os import path
-from google.colab import userdata
 
 amvera_var = 0
 amvera_var = os.environ["MY_VAR"]
@@ -12,6 +11,7 @@ if amvera_var == 1:
   bot_token = os.environ('ASKLLM_BOT_TOKEN')
 else:
   # Импортировать ключ для авторизации в GigaChat и токен от Telegram бота
+  from google.colab import userdata
   sber = userdata.get('SBER_AUTH')
   bot_token = userdata.get('ASKLLM_BOT_TOKEN')
 
