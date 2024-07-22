@@ -1,0 +1,6 @@
+pyTelegramBotAPI
+gigachain 
+gigachain-community 
+unstructured[all-docs] 
+faiss-cpu 
+sentence-transformers
