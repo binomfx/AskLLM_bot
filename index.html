@@ -223,8 +223,9 @@
 		
 		function setNewPrompt() {
 			newPrompt = "";
-			if (document.getElementById('tab1').checked) { // Ручной ввод
-				newPrompt = document.getElementById('prompt1').value;
+			if (document.getElementById('tab1').checked) { // Шаблон
+				i_template = document.getElementById('template').value;
+				newPrompt = d_templates[i_template];
 			} else if (document.getElementById('tab2').checked) { // Конструктор
 				s_role = document.getElementById('role').value;
 				s_task = document.getElementById('task').value;
@@ -232,9 +233,8 @@
 				s_format = document.getElementById('format').value;
 				s_style = document.getElementById('style1').value;
 				newPrompt = d_constructor[1] + s_role + d_constructor[2] + s_task + " " + s_task2 + d_constructor[3] + s_format + d_constructor[4] + s_style + d_constructor[5];
-			} else if (document.getElementById('tab3').checked) { // Шаблон
-				i_template = document.getElementById('template').value;
-				newPrompt = d_templates[i_template];
+			} else if (document.getElementById('tab3').checked) { // Ручной ввод
+				newPrompt = document.getElementById('prompt1').value;
 			} else {
 				tg.close();
 			}
