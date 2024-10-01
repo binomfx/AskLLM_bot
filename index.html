@@ -90,7 +90,7 @@
 	}
 
 	label[for*='1']:before {
-	  content: '\f044';
+	  content: '\f0ca';
 	}
 
 	label[for*='2']:before {
@@ -98,7 +98,7 @@
 	}
 
 	label[for*='3']:before {
-	  content: '\f0ca';
+	  content: '\f044';
 	}
 
 	label[for*='4']:before {
@@ -248,13 +248,13 @@
 <main>
   
   <input id="tab1" type="radio" name="tabs" checked>
-  <label for="tab1">Ручной</label>
+  <label for="tab1">Шаблон</label>
     
   <input id="tab2" type="radio" name="tabs">
   <label for="tab2">Конструктор</label>
     
   <input id="tab3" type="radio" name="tabs">
-  <label for="tab3">Шаблон</label>
+  <label for="tab3">Ручной</label>
 
   <input id="tab4" type="radio" name="tabs">
   <label for="tab4">Справка</label>
@@ -262,8 +262,16 @@
   <section id="content1">
       			<h2>Введите свой промпт:</h2>
 	  		<p></p>
-			<p>
-				<textarea id="prompt1" name="prompt" rows="3" cols="35"></textarea>
+	  		<p>
+				<select id="template" name="prompt_3">
+					<option value="1">Упрости сложную информацию</option>
+					<option value="2">Тренируйся, чтобы научиться писать правильно</option>
+					<option value="3">Применяй свои знания</option>
+					<option value="4">Сравнивай и противопоставляй</option>
+					<option value="5">Обобщи сложный текст</option>
+					<option value="6">Открытый вопрос</option>
+					<option value="7">Беседа</option>
+				</select>
 			</p>
   </section>
     
@@ -345,16 +353,8 @@
   <section id="content3">
       			<h2>Выберите шаблон:</h2>
 			<p></p>
-	  		<p>
-				<select id="template" name="prompt_3">
-					<option value="1">Упрости сложную информацию</option>
-					<option value="2">Тренируйся, чтобы научиться писать правильно</option>
-					<option value="3">Применяй свои знания</option>
-					<option value="4">Сравнивай и противопоставляй</option>
-					<option value="5">Обобщи сложный текст</option>
-					<option value="6">Открытый вопрос</option>
-					<option value="7">Беседа</option>
-				</select>
+			<p>
+				<textarea id="prompt1" name="prompt" rows="3" cols="35"></textarea>
 			</p>
   </section>
 
